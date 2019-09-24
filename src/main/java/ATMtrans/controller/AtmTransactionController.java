@@ -9,6 +9,6 @@ public class AtmTransactionController {
     @GetMapping
     @ResponseBody
     public String getAtm(){
-        return "ATM is working!";
+        return "ATM transaction is working!";
     }
 }
