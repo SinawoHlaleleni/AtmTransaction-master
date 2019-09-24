@@ -25,8 +25,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                     .password(encoder().encode("sinawo123"))
                     .roles("Manager")
                     .and()
-                    .withUser("admin")
-                    .password(encoder().encode("admin123"))
+                     .withUser("adp")
+                    .password(encoder().encode("adp2019"))
                     .roles("ADMIN");
         }
 
@@ -35,7 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         protected void configure(HttpSecurity http) throws Exception {
             http
                     .authorizeRequests()
-                    .antMatchers(HttpMethod.POST, "/AtmTransaction-master/lookup/**/create/**").hasRole("ADMIN")
+                    .antMatchers( "/AtmTransaction-master/lookup/**/create/**").hasRole("ADMIN")
                     .anyRequest().authenticated()
                     .and()
                     .httpBasic()
